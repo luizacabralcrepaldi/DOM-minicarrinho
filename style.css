@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --verde: #287a4b;
+  --verde-escuro: #1d5d39;
+  --fundo: #f4f8f3;
+  --texto: #23352a;
+  --suave: #66766b;
+  --borda: #dce7dc;
+}
+
+body {
+  min-height: 100vh;
+  padding: 32px 16px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: min(100%, 760px);
+  margin: 0 auto;
+}
+
+.cabecalho {
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.etiqueta {
+  margin-bottom: 8px;
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.cabecalho > p:last-child {
+  color: var(--suave);
+  line-height: 1.5;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.card {
+  padding: 22px 14px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(35, 53, 42, 0.05);
+}
+
+.emoji {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+}
+
+.card h2 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.preco {
+  margin-bottom: 16px;
+  color: var(--suave);
+  font-weight: bold;
+}
+
+button {
+  border: 0;
+  border-radius: 9px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:focus-visible {
+  outline: 3px solid #e8bd58;
+  outline-offset: 3px;
+}
+
+.btn-add {
+  width: 100%;
+  padding: 10px 8px;
+  background: var(--verde);
+  color: white;
+}
+
+.btn-add:hover {
+  background: var(--verde-escuro);
+}
+
+.carrinho-box {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(35, 53, 42, 0.05);
+}
+
+.titulo-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.titulo-carrinho h2 {
+  font-size: 1.35rem;
+}
+
+.btn-limpar {
+  padding: 9px 12px;
+  background: #fce8e6;
+  color: #a23c35;
+}
+
+.btn-limpar:hover {
+  background: #f8d7d4;
+}
+
+.mensagem-vazia {
+  padding: 18px 0;
+  color: var(--suave);
+  text-align: center;
+  line-height: 1.5;
+}
+
+#lista-carrinho {
+  list-style: none;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+.nome-item {
+  font-weight: bold;
+}
+
+.detalhe-item {
+  margin-top: 4px;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+.acoes-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-qtd, .btn-remover {
+  min-width: 30px;
+  padding: 6px 9px;
+  background: #edf5ee;
+  color: var(--verde-escuro);
+}
+
+.btn-remover {
+  background: #fce8e6;
+  color: #a23c35;
+}
+
+.rodape-carrinho {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 2px solid var(--borda);
+  font-size: 1.05rem;
+}
+
+.rodape-carrinho strong {
+  color: var(--verde-escuro);
+  font-size: 1.3rem;
+}
+
+.mensagem {
+  min-height: 18px;
+  margin-top: 10px;
+  color: var(--verde);
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 22px;
+  color: var(--suave);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  body {
+    padding: 22px 12px;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .emoji {
+    grid-row: span 3;
+    margin: 0;
+  }
+
+  .card h2, .preco {
+    margin-bottom: 5px;
+  }
+
+  .btn-add {
+    grid-column: 2;
+    margin-top: 8px;
+  }
+
+  .carrinho-box {
+    padding: 17px;
+  }
+
+  .item-carrinho {
+    align-items: flex-start;
+  }
+
+  .acoes-item {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}

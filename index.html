@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minicarrinho de Compras</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="cabecalho">
+      <p class="etiqueta">PROJETO PRÁTICO · DOM</p>
+      <h1>🍇 Feirinha de Frutas</h1>
+      <p>Escolha suas frutas e monte seu carrinho.</p>
+    </header>
+
+    <section class="produtos" aria-label="Produtos disponíveis">
+      <article class="card">
+        <span class="emoji">🍎</span>
+        <h2>Maçã</h2>
+        <p class="preco">R$ 3,50</p>
+        <button class="btn-add" data-nome="Maçã" data-preco="3.50">Adicionar</button>
+      </article>
+      <article class="card">
+        <span class="emoji">🍌</span>
+        <h2>Banana</h2>
+        <p class="preco">R$ 2,00</p>
+        <button class="btn-add" data-nome="Banana" data-preco="2.00">Adicionar</button>
+      </article>
+      <article class="card">
+        <span class="emoji">🥑</span>
+        <h2>Abacate</h2>
+        <p class="preco">R$ 6,00</p>
+        <button class="btn-add" data-nome="Abacate" data-preco="6.00">Adicionar</button>
+      </article>
+    </section>
+
+    <section class="carrinho-box">
+      <div class="titulo-carrinho">
+        <div>
+          <p class="etiqueta">SUA COMPRA</p>
+          <h2>🛒 Meu carrinho</h2>
+        </div>
+        <button id="btn-limpar" class="btn-limpar" type="button">Esvaziar</button>
+      </div>
+      <p id="mensagem-vazia" class="mensagem-vazia">Seu carrinho está vazio. Adicione uma fruta para começar!</p>
+      <ul id="lista-carrinho"></ul>
+      <div class="rodape-carrinho">
+        <span>Total da compra</span>
+        <strong>R$ <span id="valor-total">0.00</span></strong>
+      </div>
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </section>
+    <footer>Feito para praticar HTML, CSS e JavaScript.</footer>
+  </main>
+</body>
+</html>
